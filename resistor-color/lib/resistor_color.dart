@@ -1,41 +1,24 @@
 class ResistorColor {
-  var colors = [
-    'black',
-    'brown',
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'blue',
-    'violet',
-    'grey',
-    'white',
-  ];
+  Map<String, int> _colorMap = {
+    'black': 0,
+    'brown': 1,
+    'red': 2,
+    'orange': 3,
+    'yellow': 4,
+    'green': 5,
+    'blue': 6,
+    'violet': 7,
+    'grey': 8,
+    'white': 9,
+  };
 
   int colorCode(String color) {
-    switch (color.toLowerCase()) {
-      case "black":
-        return 0;
-      case "brown":
-        return 1;
-      case "red":
-        return 2;
-      case "orange":
-        return 3;
-      case "yellow":
-        return 4;
-      case "green":
-        return 5;
-      case "blue":
-        return 6;
-      case "violet":
-        return 7;
-      case "grey":
-        return 8;
-      case "white":
-        return 9;
-      default:
-        return -1;
-    }
+    return _colorMap[color];
+  }
+
+  List<String> colors;
+
+  ResistorColor() {
+    colors = _colorMap.keys.toList();
   }
 }
